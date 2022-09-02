@@ -17,6 +17,8 @@ class TestMethods(unittest.TestCase):
         user = User(response['login'], response['id'], response['avatar_url'], response['html_url']) 
         self.assertTrue(user.get_login() == 'joaofmds')
         self.assertTrue(user.avatar_url.startswith('http'))
+        self.assertTrue(user.html_url.startswith('http'))
+        assert isinstance(user.id, int), 'O id deve ser um inteiro.'
 
 if __name__ == "__main__":
 
